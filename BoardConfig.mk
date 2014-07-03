@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-TARGET_OTA_ASSERT_DEVICE := u8860,U8860
+TARGET_OTA_ASSERT_DEVICE := u8800pro,u8800pro
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 
 # Platform
-TARGET_BOOTLOADER_BOARD_NAME := u8860
+TARGET_BOOTLOADER_BOARD_NAME := u8800pro
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
@@ -61,7 +61,7 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := kernel/huawei/honor
+TARGET_KERNEL_SOURCE := kernel/huawei/u8800pro
 TARGET_KERNEL_CONFIG := jellytime_defconfig
 
 # USB Mounting
@@ -76,8 +76,8 @@ BOARD_VOLD_MAX_PARTITIONS := 20
 # Recovery
 TW_NO_REBOOT_BOOTLOADER := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_INITRC := device/huawei/u8860/init.rc
-TARGET_RECOVERY_FSTAB := device/huawei/u8860/recovery.fstab
+TARGET_RECOVERY_INITRC := device/huawei/u8800pro/init.rc
+TARGET_RECOVERY_FSTAB := device/huawei/u8800pro/recovery.fstab
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_USES_MMCUTILS := true
@@ -107,5 +107,5 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_RECOVERY_RMT_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8860/recovery/graphics.c
+TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
 

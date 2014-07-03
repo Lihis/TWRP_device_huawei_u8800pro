@@ -5,11 +5,11 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration.
-$(call inherit-product, device/huawei/u8860/device_u8860.mk)
+$(call inherit-product, device/huawei/u8800pro/device_u8800pro.mk)
 
 # Device identifier.
-PRODUCT_DEVICE := u8860
-PRODUCT_NAME := cm_u8860
+PRODUCT_DEVICE := u8800pro
+PRODUCT_NAME := cm_u8800pro
 PRODUCT_BRAND := huawei
-PRODUCT_MODEL := u8860
+PRODUCT_MODEL := u8800pro
 PRODUCT_MANUFACTURER := huawei
