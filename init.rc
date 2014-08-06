@@ -9,18 +9,48 @@ on init
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
 
-    mkdir /cache
-    mkdir /system
-    mkdir /data
     mkdir /boot
-    mkdir /recovery
-    mkdir /emmc
     mkdir /sdcard
     mkdir /sd-ext
+    mkdir /cust
+    mkdir /datadata
+    mkdir /emmc
+    mkdir /internal_sd
+    mkdir /system
+    mkdir /data
+    mkdir /cache
     mount tmpfs tmpfs /tmp
 
     chown root shell /tmp
     chmod 0775 /tmp
+
+    mkdir /mnt 0775 root system
+    mkdir /storage 0050 root sdcard_r
+    mount tmpfs tmpfs /storage mode=0050,uid=0,gid=1028
+
+
+# Always start adbd on userdebug and eng builds
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell 0700 shell shell
+
+    # Directory for putting things only root should see.
+    mkdir /mnt/secure 0700 root root
+
+    # Create private mountpoint so we can MS_MOVE from staging
+    mount tmpfs tmpfs /mnt/secure mode=0700,uid=0,gid=0
+
+    # Directory for staging bindmounts
+    mkdir /mnt/secure/staging 0700 root root
+
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 12d1
+    write /sys/class/android_usb/android0/idProduct 1038
+    write /sys/class/android_usb/android0/f_mass_storage/nluns 2
+    write /sys/class/android_usb/android0/f_mass_storage/cdrom_index none
+    write /sys/class/android_usb/android0/functions mass_storage,adb
+    write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
+    write /sys/class/android_usb/android0/iProduct ${ro.product.model}
+    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
 
 on boot
 
@@ -30,26 +60,9 @@ on boot
 
     class_start default
 
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 12d1
-    write /sys/class/android_usb/android0/idProduct 9025
-    write /sys/class/android_usb/android0/f_diag/clients diag
-    write /sys/class/android_usb/android0/f_serial/transports tty,tty
-    write /sys/class/android_usb/android0/functions diag,adb,serial,rmnet_smd,mass_storage
-    write /sys/class/android_usb/android0/enable 1
-	
+
 on property:sys.powerctl=*
    powerctl ${sys.powerctl}
-
-on property:sys.storage.ums_enabled=1
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/functions adb,mass_storage
-    write /sys/class/android_usb/android0/enable 1
-
-on property:sys.storage.ums_enabled=0
-    write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/functions adb
-    write /sys/class/android_usb/android0/enable ${service.adb.root}
 
 service rmt_storage /sbin/rmt_storage_recovery
     user root
@@ -62,7 +75,7 @@ service recovery /sbin/sh /sbin/charge.sh
 
 service charge /sbin/charge_recovery
     oneshot
-	
+
 service ueventd /sbin/ueventd
     critical
 
@@ -75,10 +88,18 @@ service adbd /sbin/adbd recovery
     disabled
     socket adbd stream 660 system system
 
+on property:ro.boot.emmc=1
+    start rmt_oeminfo
+    start rmt_storage
+
+service vold /sbin/minivold
+    socket vold stream 0660 root mount
+    ioprio be 2
+
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
-    #write /sys/class/android_usb/android0/enable 1
-    #start adbd
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
     setprop service.adb.root 1
 
 # Restart adbd so it can run as root

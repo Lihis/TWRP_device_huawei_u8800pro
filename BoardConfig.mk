@@ -61,14 +61,15 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := kernel/huawei/u8800pro
-TARGET_KERNEL_CONFIG := jellytime_defconfig
+TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 TARGET_USE_CUSTOM_SECOND_LUN_NUM := 2
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_VOLD_MAX_PARTITIONS := 20
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 #Add option to build TWRP with toolbox instead of busybox = Makes a smaller TWRP
 #Uses mksh for shell
@@ -89,23 +90,17 @@ SP1_MOUNTABLE := 1
 SP2_NAME := "internal_sd"
 SP2_BACKUP_METHOD := files
 SP2_MOUNTABLE := 1
-TW_INTERNAL_STORAGE_PATH :=  "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_INTERNAL_STORAGE_PATH :=  "/internal_sd"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "internal_sd"
 TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_FLASH_FROM_STORAGE := true 
 HAVE_SELINUX := true
 BOARD_HAS_NO_REAL_SDCARD := false
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-RECOVERY_SDCARD_ON_DATA := true
-TW_HAS_DOWNLOAD_MODE := true
-# TW_CUSTOM_POWER_BUTTON := 107
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_10x18.h\"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_RECOVERY_RMT_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
-

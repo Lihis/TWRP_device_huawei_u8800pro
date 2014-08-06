@@ -1,3 +1,16 @@
 #
 # system.prop for u8800pro
 #
+ro.secure=0
+ro.allow.mock.location=1
+ro.debuggable=1
+persist.sys.usb.config=adb
+
+sys.usb.config=adb
+persist.service.adb.enable=1
+persist.service.adb.root=1
+
+# DPI
+ro.sf.lcd_density=240
+# CWM
+ro.cwm.enable_key_repeat=true
