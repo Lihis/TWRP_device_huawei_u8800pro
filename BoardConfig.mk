@@ -61,8 +61,10 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
+TARGET_KERNEL_SOURCE := device/huawei/kernel
+TARGET_KERNEL_CONFIG := kitkattime_defconfig
+#TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
