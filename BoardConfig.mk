@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_OTA_ASSERT_DEVICE := u8800pro,u8800pro
+TARGET_OTA_ASSERT_DEVICE := u8800pro,U8800PRO
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 
 # Platform
@@ -62,7 +62,7 @@ BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 TARGET_KERNEL_SOURCE := device/huawei/kernel
-TARGET_KERNEL_CONFIG := kitkattime_defconfig
+TARGET_KERNEL_CONFIG := jellytime_defconfig
 #TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
