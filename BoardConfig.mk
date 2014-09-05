@@ -61,17 +61,10 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := device/huawei/kernel
-TARGET_KERNEL_CONFIG := jellytime_defconfig
-#TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
-
-# USB Mounting
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
-TARGET_USE_CUSTOM_SECOND_LUN_NUM := 2
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
-BOARD_VOLD_MAX_PARTITIONS := 20
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+#TARGET_KERNEL_SOURCE := device/huawei/kernel
+#TARGET_KERNEL_CONFIG := jellytime_defconfig
+TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
 
 #Add option to build TWRP with toolbox instead of busybox = Makes a smaller TWRP
 #Uses mksh for shell
