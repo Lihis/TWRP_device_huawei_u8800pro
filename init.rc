@@ -78,6 +78,9 @@ service rmt_oeminfo /sbin/rmt_oeminfo_recovery
  
 service recovery /sbin/sh /sbin/charge.sh
     oneshot
+
+service charge /sbin/charge_recovery
+    oneshot
  
 service ueventd /sbin/ueventd
     critical
