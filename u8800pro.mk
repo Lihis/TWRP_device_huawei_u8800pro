@@ -1,4 +1,4 @@
-# Inherit CM common Phone stuff.
+# Inherit from our omni product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit device configuration.

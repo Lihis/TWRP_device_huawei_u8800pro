@@ -61,15 +61,13 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-#TARGET_KERNEL_SOURCE := device/huawei/kernel
-#TARGET_KERNEL_CONFIG := jellytime_defconfig
-TARGET_PREBUILT_KERNEL := device/huawei/u8800pro/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/u8800pro/kernel
+TARGET_PREBUILT_KERNEL := kernel/huawei/prebuilt/kernel
+TARGET_PREBUILT_RECOVERY_KERNEL := kernel/huawei/prebuilt/kernel
+#TARGET_KERNEL_SOURCE := kernel/huawei/android_huawei_kernel
+#TARGET_KERNEL_CONFIG := jellytime_recovery_defconfig
 
-#Add option to build TWRP with toolbox instead of busybox = Makes a smaller TWRP
-#Uses mksh for shell
-# TW_USE_TOOLBOX := true
 # Recovery
+TW_USE_TOOLBOX := false
 TW_NO_REBOOT_BOOTLOADER := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_INITRC := device/huawei/u8800pro/init.rc
