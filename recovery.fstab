@@ -1,10 +1,7 @@
 # mount point	       fstype		device					[device2]
 
-/misc			emmc		/dev/block/mmcblk0p7
-/boot			vfat		/dev/block/mmcblk0p1
-/recovery		vfat		/dev/block/mmcblk0p1
+/boot			vfat		/dev/block/mmcblk0p1 flags=backup=0
 /cache			ext4		/dev/block/mmcblk0p6
-#/cust		        ext4		/dev/block/mmcblk0p1  flags=display="Cust";backup=1;wipeingui
 /system			ext4		/dev/block/mmcblk0p12
 /data			f2fs		/dev/block/mmcblk0p13 length=-16384 flags=fsflags="inline_xattr"
 /internal_sd		vfat		/dev/block/mmcblk0p14 flags=display="Internal Storage";storage;wipeingui

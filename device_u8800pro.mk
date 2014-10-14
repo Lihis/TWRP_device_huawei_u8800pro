@@ -32,6 +32,3 @@ device/huawei/u8800pro/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh \
 device/huawei/u8800pro/init.recovery.huawei.rc:root/init.recovery.huawei.rc \
 device/huawei/u8800pro/default.prop:root/default.prop \
 device/huawei/u8800pro/ueventd.huawei.rc:/recovery/root/ueventd.huawei.rc
-
-# \
-# device/huawei/u8800pro/recovery/tp/1191601.img:root/tp/1191601.img

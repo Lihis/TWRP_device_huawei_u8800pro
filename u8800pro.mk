@@ -7,6 +7,6 @@ $(call inherit-product, device/huawei/u8800pro/device_u8800pro.mk)
 # Device identifier.
 PRODUCT_DEVICE := u8800pro
 PRODUCT_NAME := u8800pro
-PRODUCT_BRAND := huawei
+PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := u8800pro
-PRODUCT_MANUFACTURER := huawei
+PRODUCT_MANUFACTURER := Huawei

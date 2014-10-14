@@ -61,10 +61,10 @@ BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=huawei
 BOARD_INSTALLER_CMDLINE := $(BOARD_KERNEL_CMDLINE)
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_PREBUILT_KERNEL := kernel/huawei/prebuilt/kernel
-TARGET_PREBUILT_RECOVERY_KERNEL := kernel/huawei/prebuilt/kernel
-#TARGET_KERNEL_SOURCE := kernel/huawei/android_huawei_kernel
-#TARGET_KERNEL_CONFIG := jellytime_recovery_defconfig
+#TARGET_PREBUILT_KERNEL := kernel/huawei/prebuilt/kernel
+#TARGET_PREBUILT_RECOVERY_KERNEL := kernel/huawei/prebuilt/kernel
+TARGET_KERNEL_SOURCE := kernel/huawei/android_huawei_kernel
+TARGET_KERNEL_CONFIG := jellytime_defconfig
 
 # Recovery
 TW_USE_TOOLBOX := false
