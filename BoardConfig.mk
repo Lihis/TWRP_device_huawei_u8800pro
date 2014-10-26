@@ -96,4 +96,3 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_RECOVERY_RMT_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/huawei/u8800pro/recovery/graphics.c
