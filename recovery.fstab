@@ -1,6 +1,6 @@
 # mount point	       fstype		device					[device2]
 
-/boot			vfat		/dev/block/mmcblk0p1 flags=backup=0
+/boot			vfat		/dev/block/mmcblk0p1
 /cache			ext4		/dev/block/mmcblk0p6
 /system			ext4		/dev/block/mmcblk0p12
 /data			f2fs		/dev/block/mmcblk0p13 length=-16384 flags=fsflags="inline_xattr"
