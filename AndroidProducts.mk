@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/u8800pro.mk
+    $(LOCAL_DIR)/omni_u8800pro.mk

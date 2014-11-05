@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo u8800pro-userdebug
+add_lunch_combo omni_u8800pro-userdebug
