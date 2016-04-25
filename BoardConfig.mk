@@ -33,7 +33,6 @@ TARGET_CPU_VARIANT := scorpion
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_CORTEX_CACHE_LINE_32 := true
-USE_OPENGL_RENDERER := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000 #10MB
@@ -66,6 +65,7 @@ TARGET_KERNEL_SOURCE := kernel/huawei/android_huawei_kernel
 TARGET_KERNEL_CONFIG := jellytime_defconfig
 
 # Recovery
+TW_THEME := portrait_mdpi
 TW_USE_TOOLBOX := false
 TW_NO_REBOOT_BOOTLOADER := true
 BOARD_HAS_NO_SELECT_BUTTON := true

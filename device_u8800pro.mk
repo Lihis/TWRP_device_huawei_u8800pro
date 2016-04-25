@@ -29,6 +29,6 @@ device/huawei/u8800pro/recovery/sbin/rmt_storage_recovery:/recovery/root/sbin/rm
 device/huawei/u8800pro/recovery/sbin/rmt_oeminfo_recovery:/recovery/root/sbin/rmt_oeminfo_recovery \
 device/huawei/u8800pro/recovery/sbin/linker:/recovery/root/sbin/linker \
 device/huawei/u8800pro/recovery/sbin/charge.sh:/recovery/root/sbin/charge.sh \
-device/huawei/u8800pro/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-device/huawei/u8800pro/system.prop:root/system.prop \
+device/huawei/u8800pro/init.recovery.huawei.rc:root/init.recovery.huawei.rc \
+device/huawei/u8800pro/default.prop:root/default.prop \
 device/huawei/u8800pro/ueventd.huawei.rc:/recovery/root/ueventd.huawei.rc

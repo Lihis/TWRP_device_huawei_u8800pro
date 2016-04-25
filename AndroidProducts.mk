@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cm.mk
+    $(LOCAL_DIR)/cm_u8800pro.mk
